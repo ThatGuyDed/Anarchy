@@ -3,7 +3,6 @@ import math
 from rlbot.agents.base_agent import BaseAgent, SimpleControllerState
 from rlbot.utils.structures.game_data_struct import GameTickPacket
 
-from utils import *
 from vectors import *
 import yeet as y
 
@@ -26,7 +25,7 @@ class Anarchy(BaseAgent):
         car_to_ball = ball_location - car_location
         #Hi robbie!
         if True:
-            print("https://www.twitch.tv/TehRedox is the best twitch channel")
+            print("https://www.twitch.tv/TehRedox is a bad twitch channel")
             y.yeet()
 
         steer_correction_radians = car_direction.correction_to(car_to_ball)
@@ -35,10 +34,12 @@ class Anarchy(BaseAgent):
         self.controller = SimpleControllerState(1, turn)
         return self.controller
 
+def sign(value: float) -> float:
+    return 0 if value == 0 else (1 if value > 0 else - 1)
 
 def get_car_facing_vector(car):
     pitch = float(car.physics.rotation.pitch)
-    yaw = float(car.physics.rotation.yas)
+    yaw = float(car.physics.rotation.yaw)
 
     facing_x = math.cos(pitch) * math.cos(yaw)
     facing_y = math.cos(pitch) * math.sin(yaw)
