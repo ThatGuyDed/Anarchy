@@ -4,6 +4,7 @@ from rlbot.agents.base_agent import BaseAgent, SimpleControllerState
 from rlbot.utils.structures.game_data_struct import GameTickPacket
 
 from vectors import *
+import yeet as y
 
 # first! 
 
@@ -25,6 +26,7 @@ class Anarchy(BaseAgent):
         #Hi robbie!
         if True:
             print("https://www.twitch.tv/TehRedox is a bad twitch channel")
+            y.yeet()
 
         steer_correction_radians = car_direction.correction_to(car_to_ball)
         turn = 1 if steer_correction_radians > 0 else -1
