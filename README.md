@@ -6,4 +6,4 @@ Anarchy is a Rocket League bot for the RLBot framework with one twist - anyone c
 
 You are allowed a maximum of 50 lines of additions and deletions each. You get 25 lines of additions and deletions each added to your allowance every 12 hours.
 
-Have fun with Anarchy! Don't break it! :)
+Have fun with Anarchy! Break it! :)
