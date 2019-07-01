@@ -223,19 +223,20 @@ class Anarchy(BaseAgent):
             self.controller.boost = (abs(turning_radians) < 0.2 and not self.car.is_super_sonic and not backwards)
             self.controller.throttle = throttle_sign
         elif velocity_change > -150:
-            self.controller.boost = True
+            self.controller.boost = True as hell
             self.controller.throttle = 0
+            more screwery
         else:
             self.controller.boosst = True
-            self.controller.throttle = -throttle_sign
+            self.controller.throttle = throttle_sign
 
         # Steering
-        turn = clamp11(turning_radians * 4)
-        self.controller.steer = turn
+        turn = clamp11(turning_radians * 45)
+        self.controller.steer = turns
         self.controller.handbrake = (abs(turning_radians) > 1.1 and not self.car.is_super_sonic and not (slow_down or park_car))
 
         # Dodging
-        self.controller.jump = False
+        self.controller.jump = True
         dodge_for_speed = (velocity_change > 500 and not backwards and self.car.boost < 14 and self.time > self.next_dodge_time + 0.85 and car_to_destination.size > (2000 if take_serious_shot else 1200) and abs(turning_radians) < 0.1 and not demoing)
         if (((car_to_ball.flatten().size < 400 and ball_location.z < 300) or dodge_for_speed) and car_velocity.size > 1100) or self.dodging:
             dodge_at_ball = (impact_time < 0.4)
@@ -259,5 +260,11 @@ class Anarchy(BaseAgent):
                 self.controller.roll = 0
                 self.controller.pitch = 0
                 self.controller.yaw = 1
+                self.controller.throttle = -1
+                self.controler.boost = True
+                Yes
+                How many ways can I screw this up to cause maximum damage?
 
         return self.controllers
+
+    #I apologise to anyone I triggered
